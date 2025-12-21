@@ -6,31 +6,6 @@ The project aims to analyze historical stock data, engineer features, train mach
 
 ---
 
-## Project Structure
-Project_101/
-│
-├── data/
-│ ├── raw/ # Original raw stock data
-│ └── processed/ # Cleaned and processed data ready for modeling
-│
-├── notebooks/ # Jupyter notebooks for exploration, preprocessing, and modeling
-│ └── 01_data_exploration.ipynb
-│
-├── src/ # Python scripts for modular tasks
-│ ├── data_loader.py
-│ ├── preprocessing.py
-│ ├── models.py
-│ ├── explainers.py
-│ └── utils.py
-│
-├── models/ # Saved machine learning models
-├── requirements.txt # Python dependencies
-├── README.md # This file
-└── .gitignore # Git ignore rules
-
-
----
-
 ## Current Progress (Updated as of 2025-12-21 at 4:06 AM)
 
 ### 1. Data Loading and Cleaning
