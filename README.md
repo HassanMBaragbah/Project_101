@@ -14,20 +14,20 @@ The project aims to analyze historical stock data, engineer features, train mach
 ---
 
 ## Workflow Summary
-1. **EDA (01)**  
+1. **EDA**  
    Inspect dataset structure and quality, then save a cleaned version for reproducibility.
 
-2. **Feature Engineering (02)**  
+2. **Feature Engineering**  
    Create interpretable features that reflect market behavior:
    - momentum (returns + lags)
    - trend (moving averages)
    - risk/uncertainty (volatility)
    - participation (volume change)
 
-3. **Baseline Modeling (03)**  
+3. **Baseline Modeling**  
    Train a Random Forest classifier with a **time-based split** (chronological 80/20) to avoid leakage.
 
-4. **Explainability (04)**  
+4. **Explainability**  
    Use **SHAP** to:
    - understand global feature influence (summary plot)
    - explain a single prediction (waterfall plot)
