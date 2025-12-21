@@ -37,16 +37,21 @@ The project aims to analyze historical stock data, engineer features, train mach
 ---
 
 ## How to Run
+
 1. Clone the repository:
 ```bash
 git clone https://github.com/HassanMBaragbah/Project_101.git
 ```
 
-2. Create a virtual environment and install dependencies:
+2. Create a virtual environment and install dependencies (Windows):
 ```bash
 python -m venv venv
-source venv/Scripts/activate  # Windows
+venv\Scripts\activate
 pip install -r requirements.txt
+```
+If using PowerShell:
+```bash
+venv\Scripts\Activate.ps1
 ```
 
 
