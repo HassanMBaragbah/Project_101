@@ -38,12 +38,12 @@ The project aims to analyze historical stock data, engineer features, train mach
 
 ## How to Run
 
-1. Clone the repository:
+### 1. Clone the repository:
 ```bash
 git clone https://github.com/HassanMBaragbah/Project_101.git
 ```
 
-2. Create a virtual environment and install dependencies (Windows):
+### 2. Create a virtual environment and install dependencies (Windows):
 ```bash
 python -m venv venv
 venv\Scripts\activate
@@ -55,4 +55,4 @@ venv\Scripts\Activate.ps1
 ```
 
 
-3. Open the notebooks in Jupyter or VS Code and run cells sequentially.
+### 3. Open the notebooks in Jupyter or VS Code and run cells sequentially.
