@@ -32,6 +32,25 @@ The project aims to analyze historical stock data, engineer features, train mach
    - understand global feature influence (summary plot)
    - explain a single prediction (waterfall plot)
    - explain misclassifications (error analysis)
+   The explainability analysis naturally leads to a deeper investigation of model failures, which is addressed in the following stage.
+
+5. **Deep Error Analysis & Model Reflection (In Progress)**
+
+This stage focuses on qualitative analysis of model errors using explainability outputs.
+The objective is to understand *why* the model fails in certain scenarios rather than
+immediately optimizing performance.
+
+Key aspects include:
+- Identifying and categorizing misclassified predictions
+- Distinguishing between reasonable errors (e.g., high volatility regimes)
+  and potential model weaknesses
+- Analyzing dominant features that consistently drive incorrect predictions
+- Using explainability insights to guide future improvements in a principled manner
+
+This step emphasizes model understanding and reflection, serving as a foundation
+for future extensions rather than immediate performance tuning.
+
+
 
 ## Target Definition
 Binary classification:
