@@ -12,7 +12,7 @@ The project aims to analyze historical stock data, engineer features, train mach
 - Loaded historical stock data from CSV.
 - Converted `Date` column to datetime type for time series operations.
 - Cleaned `Vol.` (trading volume) column:
-  - Converted "M" and "K" suffixes to numeric values.
+  - Converted "B", "M" and "K" suffixes to numeric values.
   - Filled missing values using forward/backward fill.
 - Converted `Change %` column to float.
 - Verified no missing data remains.
