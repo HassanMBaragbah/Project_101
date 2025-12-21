@@ -40,6 +40,7 @@ The project aims to analyze historical stock data, engineer features, train mach
 1. Clone the repository:
 ```bash
 git clone https://github.com/HassanMBaragbah/Project_101.git
+```
 
 2. Create a virtual environment and install dependencies:
 python -m venv venv
