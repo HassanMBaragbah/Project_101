@@ -36,19 +36,19 @@ The project aims to analyze historical stock data, engineer features, train mach
 
 5. **Deep Error Analysis & Model Reflection (In Progress)**
 
-This stage focuses on qualitative analysis of model errors using explainability outputs.
-The objective is to understand *why* the model fails in certain scenarios rather than
-immediately optimizing performance.
+   This stage focuses on qualitative analysis of model errors using explainability outputs.
+   The objective is to understand *why* the model fails in certain scenarios rather than
+   immediately optimizing performance.
 
-Key aspects include:
-- Identifying and categorizing misclassified predictions
-- Distinguishing between reasonable errors (e.g., high volatility regimes)
-  and potential model weaknesses
-- Analyzing dominant features that consistently drive incorrect predictions
-- Using explainability insights to guide future improvements in a principled manner
+   Key aspects include:
+   - Identifying and categorizing misclassified predictions
+   - Distinguishing between reasonable errors (e.g., high volatility regimes)
+   and potential model weaknesses
+   - Analyzing dominant features that consistently drive incorrect predictions
+   - Using explainability insights to guide future improvements in a principled manner
 
-This step emphasizes model understanding and reflection, serving as a foundation
-for future extensions rather than immediate performance tuning.
+   This step emphasizes model understanding and reflection, serving as a foundation
+   for future extensions rather than immediate performance tuning.
 
 
 
