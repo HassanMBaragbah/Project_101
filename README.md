@@ -43,9 +43,11 @@ git clone https://github.com/HassanMBaragbah/Project_101.git
 ```
 
 2. Create a virtual environment and install dependencies:
+```bash
 python -m venv venv
 source venv/Scripts/activate  # Windows
 pip install -r requirements.txt
+```
 
 
 3. Open the notebooks in Jupyter or VS Code and run cells sequentially.
