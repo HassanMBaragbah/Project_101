@@ -1,0 +1,9 @@
+
+Project 101 – Explainable AI Summary
+
+- The model relies primarily on short-term temporal and volatility-based features.
+- High-confidence errors occur during volatile or atypical market conditions.
+- Explainability analysis revealed features that act as both signals and error drivers.
+- Recommendations include regime-aware features and improved temporal modeling.
+
+This project emphasizes explainability as a core component of trustworthy machine learning.
