@@ -1,91 +1,172 @@
-# Project 101 - Explainable AI Finance
+# Project 101 — Explainable AI for Financial Time-Series Modeling
 
 ## Overview
-Project 101 is focused on building an **Explainable AI (XAI) model** for financial stock data.  
-The project aims to analyze historical stock data, engineer features, train machine learning models, and generate explainable predictions for better financial decision-making.
+Project 101 is an end-to-end machine learning project focused on **Explainable Artificial Intelligence (XAI)** applied to financial time-series data.
 
+The core objective of this project is not only to build a predictive model, but to **understand, diagnose, and explain its behavior**, particularly in scenarios where the model makes incorrect or high-confidence erroneous predictions.
 
-## Goals
-- Build a clean and reproducible ML pipeline from EDA → Feature Engineering → Modeling → Explainability.
-- Avoid common time-series pitfalls such as data leakage.
-- Provide global and local explanations for model decisions (trust, transparency, and error analysis).
-
+By combining structured error analysis with explainability techniques such as SHAP, the project transforms a traditional black-box model into an interpretable and trustworthy analytical system.
 
 ---
 
-## Workflow Summary
-1. **EDA**  
-   Inspect dataset structure and quality, then save a cleaned version for reproducibility.
+## Problem Statement
+Financial time-series data is characterized by high volatility, noise, and frequent regime changes.  
+While machine learning models can achieve reasonable predictive performance, they often fail silently by making confident yet incorrect predictions.
 
-2. **Feature Engineering**  
-   Create interpretable features that reflect market behavior:
-   - momentum (returns + lags)
-   - trend (moving averages)
-   - risk/uncertainty (volatility)
-   - participation (volume change)
+Such failures raise critical questions:
+- Where does the model fail?
+- Why do these failures occur?
+- Which features drive correct predictions versus incorrect ones?
+- How can explainability guide improvement rather than relying solely on metrics?
 
-3. **Baseline Modeling**  
-   Train a Random Forest classifier with a **time-based split** (chronological 80/20) to avoid leakage.
+This project addresses these questions through a systematic, explainability-driven workflow.
 
-4. **Explainability**  
-   Use **SHAP** to:
-   - understand global feature influence (summary plot)
-   - explain a single prediction (waterfall plot)
-   - explain misclassifications (error analysis)
-   The explainability analysis naturally leads to a deeper investigation of model failures, which is addressed in the following stage.
+---
 
-5. **Deep Error Analysis & Model Reflection (In Progress)**
+## Methodology Overview
+The project follows a structured pipeline:
 
-   This stage focuses on qualitative analysis of model errors using explainability outputs.
-   The objective is to understand *why* the model fails in certain scenarios rather than
-   immediately optimizing performance.
+1. **Data understanding and validation**
+2. **Feature engineering with temporal awareness**
+3. **Model training and evaluation**
+4. **Error identification and root cause analysis**
+5. **Explainability analysis using SHAP**
+6. **Synthesis and reflection**
 
-   Key aspects include:
-   - Identifying and categorizing misclassified predictions
-   - Distinguishing between reasonable errors (e.g., high volatility regimes)
-   and potential model weaknesses
-   - Analyzing dominant features that consistently drive incorrect predictions
-   - Using explainability insights to guide future improvements in a principled manner
+Explainability is treated as a **first-class component**, not a post-hoc visualization step.
 
-   This step emphasizes model understanding and reflection, serving as a foundation
-   for future extensions rather than immediate performance tuning.
+---
 
+## Notebook Walkthrough
 
+01 — Data Exploration
 
-## Target Definition
-Binary classification:
-- `target = 1` if next day close > current day close
-- `target = 0` otherwise
+- Initial inspection of the dataset
 
-## Reproducibility Notes
-- Processed datasets are saved under `data/processed/` to avoid re-running preparation steps.
-- The trained baseline model is saved under `models/` for consistent explainability and comparisons.
+- Validation of temporal structure
 
-## How to Run
-1. Install dependencies:
+- Identification of basic data quality characteristics
+
+02 — Feature Engineering & Temporal Representation
+
+- Engineering lagged returns and rolling statistics
+
+- Volatility and trend-based features
+
+- Time-aware feature construction
+
+03 — Model Training
+
+- Training a tree-based classification model
+
+- Ensuring feature consistency and reproducibility
+
+04 — Model Evaluation
+
+- Performance evaluation using standard classification metrics
+
+- Identification of baseline strengths and weaknesses
+
+05 — Error Analysis & Explainability
+
+This notebook represents the analytical core of the project and includes:
+
+- Identification of misclassified samples
+
+- Root cause analysis through feature distribution shifts
+
+- Explainability deep-dive using SHAP:
+
+  - Global explanations (model-level behavior)
+
+  - Local explanations (correct vs incorrect predictions)
+
+- Synthesis and reflection on findings, limitations, and improvements
+
+---
+
+## Key Insights
+
+- The model relies primarily on short-term temporal and volatility-based features
+
+- High-confidence errors tend to occur during volatile or unstable periods
+
+- Some features act as both strong predictors and error drivers depending on context
+
+- Explainability reveals patterns that are not visible through aggregate performance metrics
+
+---
+
+## How To Run the Project
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/Project_101.git
+cd Project_101
+```
+
+### 2. Create and Activate a Virtual Environment
+
+```bash
+python -m venv venv
+source venv/Scripts/activate   # Windows
+# source venv/bin/activate     # macOS / Linux
+```
+
+### 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
-2. Run notebooks in order:
 
-01_data_exploration.ipynb
+### 4. Run the Notebooks
 
-02_feature_engineering.ipynb
+Open the notebooks in the following order and execute all cells sequentially:
 
-03_modeling_baseline.ipynb
+1. `01_data_exploration.ipynb`
+2. `02_feature_engineering.ipynb`
+3. `03_model_training.ipynb`
+4. `04_model_evaluation.ipynb`
+5. `05_error_analysis_reflection.ipynb`
 
-04_model_explainability.ipynb
+---
 
-## Key Deliverables
+## Applying the Pipeline to Other Companies or Datasets
 
-Cleaned dataset (```stock_data_clean.csv```)
+The project is designed to be data-agnostic and can be applied to other companies or financial instruments with minimal changes.
 
-Engineered feature dataset (```stock_features_v1.csv```)
+To adapt the pipeline:
 
-Baseline model (```rf_baseline_v1.pkl```)
+1. Place the new dataset in `data/raw/`
+2. Ensure required columns (e.g., date, price, target) follow the expected schema
+3. Update column names if necessary in the feature engineering notebook
+4. Re-run the notebooks starting from data exploration
 
-Explainability notebook with SHAP global/local explanations and error analysis
+All modeling, explainability, and analysis logic remains unchanged.
 
-## License
+---
 
-For educational and portfolio purposes.
+## Future Work & Roadmap
+
+Potential extensions of this project include:
+
+- Robustness and stress testing under extreme market conditions
+
+- Model comparison and ensemble strategies
+
+- Regime-aware feature engineering
+
+- Monitoring, drift detection, and production deployment
+
+- Explainability governance and reporting
+
+These extensions are intentionally documented here to keep the core analysis focused and interpretable.
+
+---
+
+## Final Note
+
+This project demonstrates that **model interpretability is essential in high-stakes domains such as finance.**
+
+By integrating explainable AI techniques into the modeling workflow, Project 101 emphasizes trust, transparency, and actionable insight—beyond raw predictive performance.
